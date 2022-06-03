@@ -8,7 +8,7 @@ const GalleryItem = () => {
     setFavorite(!favorite);
   };
   return (
-    <Box bg='whiteAlpha.50' maxW='sm' borderRadius='lg' overflow='hidden'>
+    <Box bg='whiteAlpha.50' borderRadius='lg' overflow='hidden'>
       <Link href='https://picsum.photos/id/0/5616/3744' isExternal>
         <Image src='https://picsum.photos/id/0/5616/3744' alt='image' />
       </Link>

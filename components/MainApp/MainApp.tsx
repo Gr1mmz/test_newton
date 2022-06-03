@@ -4,7 +4,10 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 
 const MainApp = () => {
   return (
-    <Box p='3em' w='100%'>
+    <Box p='3em' w='100%' maxH='100%'
+         sx={{
+           overflowY: 'scroll'
+         }}>
       <Heading>Photo gallery</Heading>
       <SimpleGrid minChildWidth='300px' spacing='2em' mt='2em'>
         <GalleryItem/>

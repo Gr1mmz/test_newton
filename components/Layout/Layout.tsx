@@ -6,7 +6,7 @@ import MainApp from '../MainApp/MainApp';
 const Layout = () => {
   return (
     <main>
-      <Box bg='#141121' w='100%' minH='100vh' color='white' display='flex'>
+      <Box bg='#141121' w='100%' h='100vh' color='white' display='flex'>
         <Sidebar/>
         <MainApp/>
       </Box>
