@@ -6,7 +6,7 @@ import gallery from '../../store/gallery';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 const MainApp = observer(() => {
-  const headingText = (gallery.filter === 'all') ? 'Photo gallery' : 'Favorite photos';
+  const headingText = (gallery.filter === 'gallery') ? 'Photo gallery' : 'Favorite photos';
   return (
     <Box p='3em' w='100%' maxH='100%'
          sx={{
