@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {Box, Button, Flex, IconButton} from '@chakra-ui/react';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
+
 import gallery from '../../store/gallery';
 import {buttons} from './buttons';
-import { AiOutlineDoubleRight } from 'react-icons/ai';
 
 const Sidebar = () => {
   const [isSidebarShow, setSidebarShow] = useState(false);

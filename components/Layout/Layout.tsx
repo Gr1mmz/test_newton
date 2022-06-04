@@ -1,5 +1,6 @@
 import React from 'react';
 import {Box} from '@chakra-ui/react';
+
 import Sidebar from '../Sidebar/Sidebar';
 import MainApp from '../MainApp/MainApp';
 

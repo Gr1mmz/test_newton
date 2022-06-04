@@ -4,6 +4,7 @@ import {GalleryItem} from '../config/types';
 class Gallery {
   items: Array<GalleryItem> = [];
   filter: string = 'gallery';
+  isLoading: boolean = true;
 
   constructor() {
     makeAutoObservable(this);
@@ -32,6 +33,7 @@ class Gallery {
       .then(res => res.json())
       .then(data => {
         this.items = data;
+        this.isLoading = false;
       });
   };
 }

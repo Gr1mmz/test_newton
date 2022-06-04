@@ -1,8 +1,9 @@
 import React from 'react';
 import {observer} from 'mobx-react-lite';
-import gallery from '../../store/gallery';
 import {Box, IconButton, Image, Link} from '@chakra-ui/react';
 import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
+
+import gallery from '../../store/gallery';
 import {GalleryItem} from '../../config/types';
 
 interface IGalleryItem {
