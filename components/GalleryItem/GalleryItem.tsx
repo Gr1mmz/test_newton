@@ -17,16 +17,13 @@ const GalleryItem: React.FC<IGalleryItem> = observer(({item}) => {
          justifyContent='space-between'>
       <Link href={item.download_url} isExternal h='100%'>
         <Box boxSize='full' maxH='230px' h='100%'>
-          <Image src={imageUrl} alt={item.author} fit='cover' h='100%' w='100%' loading='lazy'
-                 crossOrigin='anonymous'/>
+          <Image src={imageUrl} alt={item.author} fit='cover' h='100%' w='100%' loading='lazy' crossOrigin='anonymous'/>
         </Box>
       </Link>
       <Box p='1.5em' bg='#1d1a2a'>
         <Box mt='1' fontWeight='semibold' noOfLines={1} display='flex' justifyContent='space-between'
              alignItems='center'>
-          <Link href={item.url} isExternal>
-            {item.author}
-          </Link>
+          <Link href={item.url} isExternal>{item.author}</Link>
           <IconButton variant='ghost' aria-label='Add Favorite' display='flex' justifyContent='center'
                       alignItems='center' onClick={() => gallery.setFavorite(item)}
                       color={item.favorite ? 'red' : '#fff'} icon={item.favorite ? <FaBookmark/> : <FaRegBookmark />}

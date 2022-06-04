@@ -11,11 +11,8 @@ const MainApp = observer(() => {
     <Box p='3em' w='100%' maxH='100%'
          sx={{
            overflowY: 'scroll',
-           '@media screen and (max-width: 425px)': {
-             padding: '2em'
-           }
-         }}
-    >
+           '@media screen and (max-width: 425px)': {padding: '2em'}
+         }}>
       <Heading>{headingText}</Heading>
       <SimpleGrid minChildWidth='300px' spacing='2em' mt='2em'
                   sx={{
