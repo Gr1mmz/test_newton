@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Button, Flex, IconButton} from '@chakra-ui/react';
 import gallery from '../../store/gallery';
+import {buttons} from './buttons';
 import { AiOutlineDoubleRight } from 'react-icons/ai';
 
 const Sidebar = () => {
@@ -31,20 +32,19 @@ const Sidebar = () => {
                     '@media screen and (max-width: 768px)': {display: 'flex'}
                   }}/>
       <Flex direction='column' gap='0.5em'>
-        <Button variant='ghost' colorScheme='purple' color='#fff' onClick={() => gallery.setFilter('all')}
-                sx={{
-                  justifyContent: 'flex-start',
-                  ':hover': {color: 'purple.900'}
-                }}>
-          Gallery
-        </Button>
-        <Button variant='ghost' colorScheme='purple' color='#fff' onClick={() => gallery.setFilter('favorite')}
-                sx={{
-                  justifyContent: 'flex-start',
-                  ':hover': {color: 'purple.900'}
-                }}>
-          Favorites
-        </Button>
+        {buttons.map(btn => (
+          <Button variant='ghost' colorScheme='purple' color='#fff' key={btn.id}
+                  onClick={() => {
+                    gallery.setFilter(btn.filter);
+                    setSidebarShow(!isSidebarShow);
+                  }}
+                  sx={{
+                    justifyContent: 'flex-start',
+                    ':hover': {color: 'purple.900'}
+                  }}>
+            {btn.title}
+          </Button>
+        ))}
       </Flex>
     </Box>
   );

@@ -3,7 +3,7 @@ import {GalleryItem} from '../config/types';
 
 class Gallery {
   items: Array<GalleryItem> = [];
-  filter: string = 'all';
+  filter: string = 'gallery';
 
   constructor() {
     makeAutoObservable(this);
@@ -11,7 +11,7 @@ class Gallery {
   };
 
   getFilteredItems() {
-    if (this.filter === 'favorite') {
+    if (this.filter === 'favorites') {
       return this.items.filter(item => item.favorite);
     }
     return this.items;
