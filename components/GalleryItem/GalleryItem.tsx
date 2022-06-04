@@ -10,13 +10,14 @@ interface IGalleryItem {
 };
 
 const GalleryItem: React.FC<IGalleryItem> = observer(({item}) => {
+  const imageUrl = `https://picsum.photos/id/${item.id}/${Math.round(item.width/5)}/${Math.round(item.height/5)}`;
 
   return (
     <Box bg='whiteAlpha.50' borderRadius='lg' overflow='hidden' display='flex' flexDirection='column'
          justifyContent='space-between'>
       <Link href={item.download_url} isExternal h='100%'>
         <Box boxSize='full' maxH='230px' h='100%'>
-          <Image src={item.download_url} alt={item.author} fit='cover' h='100%' w='100%' loading='lazy'
+          <Image src={imageUrl} alt={item.author} fit='cover' h='100%' w='100%' loading='lazy'
                  crossOrigin='anonymous'/>
         </Box>
       </Link>
