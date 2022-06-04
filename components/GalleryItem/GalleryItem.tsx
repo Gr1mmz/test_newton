@@ -10,7 +10,7 @@ interface IGalleryItem {
 };
 
 const GalleryItem: React.FC<IGalleryItem> = observer(({item}) => {
-  const imageUrl = `https://picsum.photos/id/${item.id}/${Math.round(item.width/5)}/${Math.round(item.height/5)}`;
+  const imageUrl = `https://picsum.photos/id/${item.id}/${Math.round(item.width/6)}/${Math.round(item.height/6)}`;
 
   return (
     <Box bg='whiteAlpha.50' borderRadius='lg' overflow='hidden' display='flex' flexDirection='column'
@@ -27,10 +27,14 @@ const GalleryItem: React.FC<IGalleryItem> = observer(({item}) => {
           <Link href={item.url} isExternal>
             {item.author}
           </Link>
-          <IconButton variant='unstyled' aria-label='Add Favorite' display='flex' justifyContent='center'
+          <IconButton variant='ghost' aria-label='Add Favorite' display='flex' justifyContent='center'
                       alignItems='center' onClick={() => gallery.setFavorite(item)}
                       color={item.favorite ? 'red' : '#fff'} icon={item.favorite ? <FaBookmark/> : <FaRegBookmark />}
-                      sx={{':hover, :focus': {boxShadow: 'none',}}}/>
+                      sx={{
+                        borderRadius: '50%',
+                        ':hover': {backgroundColor: 'whiteAlpha.200'},
+                        ':hover, :focus': {boxShadow: 'none',}
+                      }}/>
         </Box>
       </Box>
     </Box>
